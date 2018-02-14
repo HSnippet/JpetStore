@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class PetStoreTest {
@@ -21,6 +23,8 @@ public class PetStoreTest {
 		
 		
 		if (Browser.equals("Firefox")){
+			FirefoxOptions options = new FirefoxOptions().setProfile(new FirefoxProfile());
+			options.addPreference("browser.tabs.remote.autostart", false);
 			System.setProperty("webdriver.gecko.driver", "C:\\tools\\selenium\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
