@@ -33,7 +33,8 @@ public class PetStoreTest {
 			driver = new InternetExplorerDriver();
 		} 
 		
-		String animalRecherche = "Reptiles";		
+		String animalRecherche = "Reptiles";
+		String motCle="abcde";
 		driver.get("http://localhost:8084/jpetstore/");
 		WebElement linkEnter = driver.findElement(By.linkText("Enter the Store"));
 		linkEnter.click();
